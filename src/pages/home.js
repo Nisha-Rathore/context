@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { createContext, useState } from 'react'
+import DataList from './DataList';
 
-const home = () => {
-    const [data,setData] = useState();
-
-    const students = [
+export const BodyContext = createContext();
+const Home = () => {
+    const [data,setData] = useState([
   { 
      id: 1,
      name: "Pooja Nair", 
@@ -153,47 +153,48 @@ const home = () => {
     id: 25,
     name: "Vikas Chauhan",
     age: 22,
-    city: "Delh
-    i" },
+    city: "Delhi"
+   },
   { 
-    id: 26
-    , name: "Jyoti Sharma
-    ", age: 2
-    1, city: "Delhi
-    " },
+    id: 26,
+    name: "Jyoti Sharma",
+    age: 21,
+    city: "Delhi" 
+  },
   { 
-    id: 27
-    , name: "Sneha Kapoor
-    ", age: 2
-    0, city: "Delhi
-    " },
+    id: 27,
+    name: "Sneha Kapoor",
+    age: 20,
+    city: "Delhi"
+   },
   { 
-    id: 28
-    , name: "Mohit Rathi"
-    , age: 23
-    , city: "Delhi"
+    id: 28,
+    name: "Mohit Rathi",
+    age: 23,
+    city: "Delhi"
  },
   { 
-    id: 29
-    , name: "Ayesha Khan"
-    , age: 19
-    , city: "Delhi"
+    id: 29,
+    name: "Ayesha Khan",
+    age: 19,
+    city: "Delhi"
  },
   { 
-    id: 30
-    , name: "Harshit Shar
-    ma", age:
-     19, city: "Del
-     hi" }
-];
+    id: 30,
+    name: "Harshit Sharma",
+    age:19,
+    city: "Delhi" 
+  }
+]);
+
 
 
   return (
    <BodyContext.Provider value = {data}>
-    <datalist />
+    <DataList />
    </BodyContext.Provider>
     
   )
 }
 
-export default home
+export default Home;
