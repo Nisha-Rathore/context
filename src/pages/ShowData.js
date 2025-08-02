@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import TableBody from './TableBody'
 
 const ShowData = () => {
+  const [filter,setFilter] = useState();
+  const search =(value) => {
+    setFilter(value);
+  };
+
+  const reset = () => {
+    setFilter(null);
+  }
   return (
     <div>
-        <table>
+      <div>
+        <select onChange={(e) => search(e.target.value)}>
+          <option value="">select city</option>
+          <option>Delhi</option>
+          <option>Kolkata</option>
+          <option>Hyderabad</option>
+          <option>Bangalore</option>
+        </select>
+        <button onClick={() => reset()}>Clear</button>
+        </div>
+        <table style={{border:"1px solid black"}}>
            <thead>
              <tr>
                 <th>Id</th>
@@ -14,7 +32,7 @@ const ShowData = () => {
             </tr>
            </thead>
            <tbody>
-            <TableBody />
+            <TableBody filter={filter}/>
            </tbody>
         </table>
       
@@ -22,4 +40,4 @@ const ShowData = () => {
   )
 }
 
-export default ShowData
+export default ShowData;

@@ -1,11 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { BodyContext } from './home'
 
-const TableBody = () => {
-    const {data} =useContext(BodyContext);
+const TableBody = ({filter}) => {
+    const {rowData} =useContext(BodyContext);
+    const [list,setList] = useState(rowData);
+
+    useEffect(() => {
+      if(filter) {
+        const rData =rowData.filter((item) => item.city == filter);
+        setList(rData);
+      } else {
+        setList(rowData);
+      }
+    },[filter]);
   return (
     <div>
-        {(data ?? []).map((item,i) => (
+        {(list ?? []).map((item,i) => (
             <tr>
                 <td>{item.id}</td>
                 <td>{item.name}</td>

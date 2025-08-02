@@ -3,7 +3,7 @@ import DataList from './DataList';
 
 export const BodyContext = createContext();
 const Home = () => {
-    const [data,setData] = useState([
+    const rowData = [
   { 
      id: 1,
      name: "Pooja Nair", 
@@ -33,7 +33,7 @@ const Home = () => {
     id: 5,
     name: "Shreya Mehta", 
     age: 18, 
-    city: "Jaipur" 
+    city: "Bangalore" 
     },
   { 
     id: 6,
@@ -45,7 +45,7 @@ const Home = () => {
     id: 7,
     name: "Sandeep Desai",
     age: 20,
-    city: "Mumbai" 
+    city: "Bangalore" 
 },
   { 
     id: 8,
@@ -57,7 +57,7 @@ const Home = () => {
     id: 9,
     name: "Meera Iyer", 
     age: 19, 
-    city: "Hyderabad"
+    city: "Bangalore"
  },
   { 
     id: 10,
@@ -69,7 +69,7 @@ const Home = () => {
     id: 11,
     name: "Ramesh Patel",
     age: 20,
-    city: "Ahmedabad"
+    city: "Bangalore"
  },
   { 
     id: 12,
@@ -81,7 +81,7 @@ const Home = () => {
     id: 13,
     name: "Aditya Saxena",
     age: 22,
-    city: "Bhopal"
+    city: "Hyderabad"
  },
   { 
     id: 14,
@@ -93,7 +93,7 @@ const Home = () => {
     id: 15,
     name: "Alok Gupta",
     age: 22,
-    city: "Chennai"
+    city: "Hyderabad"
  },
   { 
     id: 16,
@@ -105,13 +105,13 @@ const Home = () => {
     id: 17,
     name: "Farhan Ali",
     age: 20,
-    city: "Lucknow" 
+    city: "Hyderabad" 
 },
   { 
     id: 18,
     name: "Neha Bhatia",
     age: 20,
-    city: "Delhi"
+    city: "Kolkata"
  },
   { 
     id: 19
@@ -123,13 +123,13 @@ const Home = () => {
     id: 20,
     name: "Ishita Ghosh",
     age: 21,
-    city: "Pune"
+    city: "Kolkata"
  },
   { 
     id: 21,
     name: "Divya Raj", 
     age: 20, 
-    city: "Delhi"
+    city: "Hyderabad"
   },
   { 
     id: 22,
@@ -141,7 +141,7 @@ const Home = () => {
     id: 23,
     name: "Ritika Verma",
     age: 19,
-    city: "Delhi"
+    city: "Hyderabad"
    },
   { 
     id: 24,
@@ -165,7 +165,7 @@ const Home = () => {
     id: 27,
     name: "Sneha Kapoor",
     age: 20,
-    city: "Delhi"
+    city: "Kolkata"
    },
   { 
     id: 28,
@@ -177,7 +177,7 @@ const Home = () => {
     id: 29,
     name: "Ayesha Khan",
     age: 19,
-    city: "Delhi"
+    city: "Kolkata"
  },
   { 
     id: 30,
@@ -185,12 +185,10 @@ const Home = () => {
     age:19,
     city: "Delhi" 
   }
-]);
-
-
+];
 
   return (
-   <BodyContext.Provider value = {data}>
+   <BodyContext.Provider value = {{ rowData }}>
     <DataList />
    </BodyContext.Provider>
     
