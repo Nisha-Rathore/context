@@ -2,28 +2,28 @@ import React, { useContext, useEffect, useState } from 'react'
 import { BodyContext } from './home'
 
 const TableBody = ({filter}) => {
-    const {rowData} =useContext(BodyContext);
-    const [list,setList] = useState(rowData);
+    const {data} =useContext(BodyContext);
+    const [list,setList] = useState([]);
 
     useEffect(() => {
       if(filter) {
-        const rData =rowData.filter((item) => item.city == filter);
+        const rData =data.filter((item) => item.city == filter);
         setList(rData);
       } else {
-        setList(rowData);
+        setList(data);
       }
-    },[filter]);
+    },[filter,data]);
   return (
-    <div>
-        {(list ?? []).map((item,i) => (
+    <>
+        {list.length>0 && list.map((item,i) => (
             <tr>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
                 <td>{item.age}</td>
-                <td>{item.city}</td>
+                <td>{item.address?.city}</td>
             </tr>
         ))}
-    </div>
+    </>
   )
 }
 
