@@ -24,12 +24,10 @@ const ShowData = () => {
         </div>
         <table style={{border:"1px solid black"}}>
            <thead>
-             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Age</th>
                 <th>City</th>
-            </tr>
+                <th>View</th>
            </thead>
            <tbody>
             <TableBody filter={filter}/>

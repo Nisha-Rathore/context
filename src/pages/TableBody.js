@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { BodyContext } from './home'
+import { Link } from 'react-router-dom';
+import { TbEye } from 'react-icons/tb';
 
 const TableBody = ({filter}) => {
     const {data} =useContext(BodyContext);
@@ -19,8 +21,24 @@ const TableBody = ({filter}) => {
             <tr>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
-                <td>{item.age}</td>
                 <td>{item.address?.city}</td>
+                 <td>
+              <Link to={`/user-details/${item.id}`}>
+                <button
+                  style={{
+                    cursor: "pointer",
+                    marginRight: "5px",
+                    border: "1px solid skyblue",
+                    background: "skyblue",
+                    borderRadius: "25px",
+                    color: "white",
+                    padding: "2px 3px",
+                  }}
+                >
+                  <TbEye style={{ fontSize: "25px" }} />
+                </button>
+              </Link>
+            </td>
             </tr>
         ))}
     </>
