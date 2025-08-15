@@ -16,9 +16,9 @@ const TableBody = ({filter}) => {
       }
     },[filter,data]);
   return (
-    <>
+   <>
         {list.length>0 && list.map((item,i) => (
-            <tr>
+            <tr className='divide-y divide-x text-center'>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
                 <td>{item.address?.city}</td>

@@ -21,15 +21,18 @@ const UserDetails = () => {
 
   return (
 
-    <div className="bg-gradient-to-r from-violet-400 via-rose-300 to-cyan-300 p-20 max-h">
+    <div className="bg-gradient-to-r from-violet-400 via-rose-300 to-cyan-300 p-20">
         <div>
             {/* <Link to={<TableBody></TableBody>}>Back</Link> */}
         </div>
-    <div className=" text-center text-white font-medium text-2xl">
-      <p className="text-purple-500 pb-10 text-6xl">Details of users</p>  
+    <div className=" text-center text-white font-medium text-2xl place-content-center">
+      <p className="text-purple-500 text-6xl pb-5 leading-loose">Details of users</p>  
       <p>Name:{data.name}</p>
       <p>UserName:{data.username}</p>
       <p>Email:{data.email}</p>
+      <p>Address:{data.address?.street} {data.address?.suite} {data.address?.city}</p>
+      <p>Phone:{data.phone}</p>
+      <p>Website:{data.website}</p>
     </div>
     </div>
   );

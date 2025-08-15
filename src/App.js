@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "../src/pages/home";
 import { Route,Routes } from "react-router-dom";
 import UserDetails from "./pages/UserDetails";
+import Tailwind from "./pages/Tailwind";
 
 function App() {
   return (

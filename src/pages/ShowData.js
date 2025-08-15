@@ -11,19 +11,19 @@ const ShowData = () => {
     setFilter(null);
   }
   return (
-    <div>
-      <div>
+    <div className='px-10'>
+      <div className='p-6 text-4xl'>
         <select onChange={(e) => search(e.target.value)}>
           <option value="">select city</option>
-          <option>Delhi</option>
-          <option>Kolkata</option>
-          <option>Hyderabad</option>
-          <option>Bangalore</option>
+          <option>Gwenborough</option>
+          <option>Wisokyburgh</option>
+          <option>South Christy</option>
+          <option>Bartholomebury</option>
         </select>
         <button onClick={() => reset()}>Clear</button>
         </div>
-        <table style={{border:"1px solid black"}}>
-           <thead>
+        <table className=' table w-full bg-[#92a7bb] text-black border-gray-500 border-2 leading-[50px] divide-x divide-y'>
+           <thead className='bg-slate-400 text-white divide-x '>
                 <th>Id</th>
                 <th>Name</th>
                 <th>City</th>
